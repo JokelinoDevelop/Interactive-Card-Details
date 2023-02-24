@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Interactive card details form</title>
+</head>
+<body>
+
+  
+   <div class="container">
+
+     <div class="card-section">
+
+        <div class="card-front">
+          <img src="images/card-logo.svg" alt="">
+          <p class="number" id="cardNumber">0000 0000 0000 0000</p>
+          <div class="card-front-flex">
+            <p class="name" id="username">Jane Appleseed</p>
+            <p class="date"><span id="month">00</span> / <span id="year">00</span></p>
+          </div>
+          
+        </div>
+
+        <div class="card-back">
+          <p id="cvc">000</p>
+        </div>
+
+      </div>
+      
+      <div class="details-wrapper">
+        <ul class="details-section list" id="inputForm">
+
+        <div class="li-wrapper">
+          <li>
+            <h3>Cardholder Name</h3>
+            <input type="text" placeholder="e.g. Jane Appleseed" name="username" id="userInput">
+          </li>
+
+          <li>
+            <h3>Card Number</h3>
+            <input type="text" placeholder="e.g. 1234 5678 9123 0000" name="cardNumber" id="cardNumberInput">
+          </li>
+          </div>
+          <div class="date-cvc-wrapper">
+
+            <li>
+              <h3>Exp. Date (MM/YY)</h3>
+              <div class="flex-input">
+                  <input type="text" placeholder="MM" name="month">
+                  <input type="text" placeholder="YY" name="year">
+              </div>
+              
+            </li>
+
+            <li>
+              <h3>CVC</h3>
+              <input type="text" placeholder="e.g. 123" name="cvc">
+            </li>
+        </div>
+
+        <button id="submitBtn">Confirm</button>
+
+      </ul>
+
+      <ul class="submitted list" id="submitForm">
+
+        <div class="image">
+          <img src="images/icon-complete.svg" alt="">
+        </div>
+
+        <h1>Thank you!</h1>
+        <p>We've added your card details</p>
+
+        <button id="continueBtn">Continue</button>
+
+      </ul>
+
+      </div>
+      
+      
+    
+   </div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+<!-- 
+  000
+
+  
+  
+
+  Confirm
+
+  <!-- Completed state start -->
+
+  <!-- 
+  
+  <!-- Continue --> 

@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
+:root{
+    /* - Linear gradient (active input border): hsl(249, 99%, 64%) to hsl(278, 94%, 30%); */
+    --red: hsl(0, 100%, 66%);
+    --white: hsl(0, 0%, 100%);
+    --light-grayish-violet: hsl(270, 3%, 87%);
+    --dark-grayish-violet: hsl(279, 6%, 55%);
+    --very-dark-violet: hsl(278, 68%, 11%);
+}
+
+body{
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+input{
+    outline: none;
+}
+
+.container{
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: 33% 1fr;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 1024px){
+    .container{
+        grid-template-rows: 1fr;
+        grid-template-columns: 33vw 1fr;
+    }
+}
+
+/* Cards */
+
+.container .card-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    position: relative;
+    min-height: 100vh;
+    width: 33vw;
+    background: url(images/bg-main-desktop.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+@media (min-width: 1024px){
+    .container .card-section{
+        grid-column: 1/2;
+    }
+}
+ 
+@media (max-width: 1024px){
+    .container .card-section{
+        width: 100vw;
+        min-height: 30vh;
+        background: url(images/bg-main-mobile.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50% 50%;
+    }
+}
+
+
+
+.container .card-section .card-front,
+.container .card-section .card-back{
+    z-index: 5;
+    width: 380px;
+    height: 220px;
+    border-radius: 10px;
+    position: relative;
+}
+
+@media (max-width: 1024px){
+    .container .card-section .card-front,
+    .container .card-section .card-back{
+        width: 280px;
+        height: 150px;
+    }
+}
+
+.container .card-section .card-front{
+    background: url(images/bg-card-front.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    transform: translateX(50%);
+    position: relative;
+    padding: 1.5rem;
+    color: #fff;
+}
+
+@media (max-width: 1024px){
+    .container .card-section .card-front{
+        position: absolute;
+        transform: translate(-10%,55%);
+        z-index: 6;
+    }
+
+    .container .card-section .card-front img{
+        width: 60px;
+    }
+}
+
+.container .card-section .card-front .number{
+    margin-top: 3rem;
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+}
+
+@media (max-width: 1024px){
+    .container .card-section .card-front .number{
+        font-size: 0.98rem;
+        margin-top: 2rem;
+    }
+}
+
+.container .card-section .card-front .card-front-flex{
+    width: 85%;
+    display: flex;
+    position: absolute;
+    bottom: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+@media (max-width: 1024px){
+    .container .card-section .card-front .card-front-flex{
+        margin-top: 0.5rem;
+        font-size: 0.7rem;
+    }
+}
+
+.container .card-section .card-back{
+    background: url(images/bg-card-back.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    transform: translateX(70%);
+    color: #fff;
+}
+
+@media (max-width: 1024px){
+    .container .card-section .card-back{
+        transform: translate(8%,0%);
+    }
+}
+
+
+.container .card-section .card-back p{
+    position: absolute;
+    right: 2.5rem;
+    top: 6rem;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 1024px){
+    .container .card-section .card-back p{
+        right: 2rem;
+        top: 4.1rem;
+        font-size: 0.7rem;
+    }
+}
+
+/* Card Details */
+
+@media (max-width: 1024px){
+    .container .list{
+        margin: 8rem auto 0 auto;
+    }
+   
+}
+
+.container .list{
+    padding: 0 1rem 2rem 1rem;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.container .details-section{
+    display:flex;
+}
+
+
+@media (min-width: 1024px){
+    .container .details-wrapper{
+        display: grid;
+        place-content: center;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1330px) {
+    .container .list{
+        margin-left: 20rem !important;
+    }
+}
+
+.container .details-section .li-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.container .list button{
+    cursor: pointer;
+    width: 100%;
+    padding: 1.5rem 0;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--very-dark-violet);
+    color: #fff;
+}
+
+.container .list button:hover{
+    background-color: hsl(249, 99%, 64%);
+    transition: 0.3s ease-in;
+}
+
+.container .details-section li h3{
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+
+.container .details-section li input{
+    width: 100%;
+    margin-top: 0.5rem;
+    padding: 1rem 1rem;
+    border-radius: 5px;
+    border: 1px solid var(--light-grayish-violet);
+    transition: all 0.3 ease-in;
+}
+
+.container .details-section li input:focus{
+    border: 2px solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to right, hsl(249, 99%, 64%), hsl(278, 94%, 30%));
+}
+
+
+
+.container .details-section li input::placeholder{
+    color: var(--dark-grayish-violet);
+}
+
+.container .details-section .date-cvc-wrapper{
+    display: flex;
+    gap: 1rem;
+}
+
+.container .details-section .date-cvc-wrapper li{
+    flex: 1
+}
+
+.container .details-section .date-cvc-wrapper li:first-child .flex-input{
+    display: flex;
+    gap: 0.5rem;
+}
+
+.container .details-section .date-cvc-wrapper li:first-child input{
+    width: 50%;
+}
+
+
+/* Submitted */
+
+.container .details-wrapper .submitted{
+    display: none;
+    gap: 1rem;
+    max-width: 450px;
+}
+
+.container .details-wrapper .submitted .image img{
+    margin: 0 auto 1rem auto;
+}
+
+.container .details-wrapper .submitted h1{
+    margin: 0 auto;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: var(--very-dark-violet);
+}
+
+.container .details-wrapper .submitted p{
+    margin: 0 auto;
+    font-size: 1.2rem;
+    color: var(--dark-grayish-violet);
+}
+
+.container .details-wrapper .submitted button{
+    margin-top: 2rem;
+}
+
+/* Error  */
+
+.error{
+    margin-top: 0.5rem;
+    color: var(--red);
+    opacity: 0.8;
+    font-size: 0.9rem;
+}
